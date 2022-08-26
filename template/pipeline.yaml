@@ -4,13 +4,15 @@ metadata:
   generateName: dag-diamond
 spec:
   entrypoint: test
-    dag:
-      tasks:
+  templates:
       - name: test
-        templateRef:
-          name: block1212
-          template: whalesay-template
-        arguments:
-          parameters:
-          - name: test-message
-            value: "{{workflow.parameters.test.message}}"
+        dag:
+          tasks:
+          - name: test
+            templateRef:
+              name: block1212
+              template: whalesay-template
+            arguments:
+              parameters:
+              - name: test-message
+                value: "{{workflow.parameters.test.message}}"
