@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName:
+spec:
+  entrypoint: entry
+  - name: entry
+    dag:
+      tasks:
+      - name: test
+        templateRef:
+          name: block1212
+          template: whalesay-template
+        arguments:
+          parameters:
+          - name: test-message
+            value: "{{workflow.parameters.test.message}}"
