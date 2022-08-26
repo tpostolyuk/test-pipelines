@@ -4,6 +4,7 @@ metadata:
   generateName: test-name
 spec:
   entrypoint: entry
+  templates:
   - name: entry
     dag:
       tasks:
