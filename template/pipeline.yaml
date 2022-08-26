@@ -3,8 +3,7 @@ kind: Workflow
 metadata:
   generateName: dag-diamond
 spec:
-  entrypoint:
-  - name: test
+  entrypoint: test
     dag:
       tasks:
       - name: test
