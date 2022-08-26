@@ -1,4 +1,4 @@
 arguments:
   parameters:
-    - name: test-message
-      value: value
+    - name: step-message
+      value: val
