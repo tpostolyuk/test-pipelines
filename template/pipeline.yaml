@@ -14,4 +14,4 @@ spec:
         arguments:
           parameters:
           - name: message
-            value: "{{workflow.parameters.first-message}}"
+            value: "{{workflow.parameters.step-message}}"
