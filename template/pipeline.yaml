@@ -1,18 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
-  generateName: dag-diamond-
+  generateName: test-name
 spec:
-  entrypoint: test
-  templates:
-    - name: test
-      dag:
-        tasks:
-        - name: test
-          templateRef:
-            name: block1212
-            template: whalesay-template
-          arguments:
-            parameters:
-            - name: test-message
-              value: "{{workflow.parameters.test.message}}"
+  entrypoint: entry
+  - name: entry
+    dag:
+      tasks:
+      - name: first
+        templateRef:
+          name: block1212
+          template: whalesay-template
+        arguments:
+          parameters:
+          - name: message
+            value: "{{workflow.parameters.first-message}}"
