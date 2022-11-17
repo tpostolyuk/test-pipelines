@@ -1,15 +1,26 @@
 apiVersion: argoproj.io/v1alpha1
 kind: WorkflowTemplate
 metadata:
-  name: workflow-template-whalesay-template
+  name: workflow-template-test
 spec:
   entrypoint: whalesay-template
   templates:
-  - name: whalesay-template
-    inputs:
-      parameters:
+  - name: template-name
+    inputs: 
+      parameters: 
       - name: message
+        value: test
     container:
       image: docker/whalesay
       command: [cowsay]
-      args: ["{{inputs.parameters.message}}"]
+  - name: test-name
+    suspend:
+      duration: "20s"
+  - name: some-script
+    script:
+      image: python:alpine3.6
+      command: [python]
+      source: |
+        import random
+        i = random.randint(1, 100)
+        print(i)
