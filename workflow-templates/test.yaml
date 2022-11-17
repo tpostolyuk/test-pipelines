@@ -16,11 +16,3 @@ spec:
   - name: test-name
     suspend:
       duration: "20s"
-  - name: some-script
-    script:
-      image: python:alpine3.6
-      command: [python]
-      source: |
-        import random
-        i = random.randint(1, 100)
-        print(i)
