@@ -17,3 +17,6 @@ spec:
     container:
       image: docker/whalesay
       command: [cowsay]
+  - name: test-name
+    suspend:
+      duration: "20s"
