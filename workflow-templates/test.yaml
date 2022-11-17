@@ -1,0 +1,11 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: workflow-template-submittable
+spec:
+  entrypoint: entrypoint-name
+  templates:
+  - name: template-name
+    container:
+      image: docker/whalesay
+      command: [cowsay]
