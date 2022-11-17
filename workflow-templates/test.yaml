@@ -6,14 +6,10 @@ spec:
   entrypoint: whalesay-template
   templates:
   - name: template-name
-  arguments:
-    parameters:
-    - name: 
     inputs: 
       parameters: 
       - name: message
         value: test
-      - name: inputname
     container:
       image: docker/whalesay
       command: [cowsay]
